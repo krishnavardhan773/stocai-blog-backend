@@ -134,3 +134,6 @@ import os
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+CSRF_TRUSTED_ORIGINS = ['https://stocai-blog-backend.onrender.com']
