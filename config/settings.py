@@ -41,6 +41,11 @@ INSTALLED_APPS = [
      # Third-party and custom apps
     'rest_framework',
     'blogs',
+
+    'cloudinary',
+    'cloudinary_storage',
+
+
 ]
 
 MIDDLEWARE = [
@@ -137,3 +142,18 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 CSRF_TRUSTED_ORIGINS = ['https://stocai-blog-backend.onrender.com']
+
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('dhsozskjv'),
+    'API_KEY': os.environ.get('754764644928211'),
+    'API_SECRET': os.environ.get('PI1kLmI-BpcanlAduO99WAFtO5g'),
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
