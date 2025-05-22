@@ -44,11 +44,13 @@ INSTALLED_APPS = [
 
     'cloudinary',
     'cloudinary_storage',
+    'corsheaders',
 
 
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -149,11 +151,11 @@ import cloudinary.uploader
 import cloudinary.api
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('dhsozskjv'),
-    'API_KEY': os.environ.get('754764644928211'),
-    'API_SECRET': os.environ.get('PI1kLmI-BpcanlAduO99WAFtO5g'),
+    'CLOUD_NAME': os.environ.get(''),
+    'API_KEY': os.environ.get(''),
+    'API_SECRET': os.environ.get(''),
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-
+CORS_ALLOW_ALL_ORIGINS = True
