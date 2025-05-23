@@ -6,7 +6,7 @@ class BlogPost(models.Model):
     subheading = models.CharField(max_length=300)
     tldr = models.TextField()
     content = models.TextField()
-    image = models.ImageField(upload_to='blog_images/')
+    image = models.URLField()
     estimated_read_time = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
 
