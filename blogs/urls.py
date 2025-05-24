@@ -26,3 +26,11 @@ from .views import FeedbackCreateView
 urlpatterns += [
     path('feedback/', FeedbackCreateView.as_view(), name='feedback'),
 ]
+
+# blogs/urls.py
+from django.urls import path
+from .views import CommentList
+
+urlpatterns = [
+    path("api/comments/", CommentList.as_view(), name="comment-list"),
+]

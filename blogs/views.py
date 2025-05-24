@@ -54,3 +54,12 @@ from .serializers import FeedbackSerializer
 class FeedbackCreateView(generics.CreateAPIView):
     serializer_class = FeedbackSerializer
     queryset = Feedback.objects.all()
+
+# blogs/views.py
+from rest_framework import generics
+from .models import Comment
+from .serializers import CommentSerializer
+
+class CommentList(generics.ListAPIView):
+    queryset = Comment.objects.all().order_by('-created_at')  # optional: latest first
+    serializer_class = CommentSerializer
