@@ -46,3 +46,9 @@ from .views import PublicBlogCreateView
 urlpatterns += [
     path('public/blogs/', PublicBlogCreateView.as_view(), name='public-blog-create'),
 ]
+
+from .views import PublicBlogUpdateDeleteView
+
+urlpatterns += [
+    path('public/blogs/<int:pk>/', PublicBlogUpdateDeleteView.as_view(), name='public-blog-update-delete'),
+]

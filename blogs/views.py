@@ -90,3 +90,12 @@ class PublicBlogCreateView(generics.CreateAPIView):
     queryset = BlogPost.objects.all()
     serializer_class = BlogPostSerializer
     # No authentication required
+
+from rest_framework import generics
+from .models import BlogPost
+from .serializers import BlogPostSerializer
+
+class PublicBlogUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = BlogPost.objects.all()
+    serializer_class = BlogPostSerializer
+    # No permissions → open access
