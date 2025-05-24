@@ -99,3 +99,12 @@ class PublicBlogUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
     queryset = BlogPost.objects.all()
     serializer_class = BlogPostSerializer
     # No permissions → open access
+
+from rest_framework import generics
+from .models import StorySubmission
+from .serializers import StorySubmissionSerializer
+
+class StorySubmissionListPublicView(generics.ListAPIView):
+    queryset = StorySubmission.objects.all().order_by('-submitted_at')
+    serializer_class = StorySubmissionSerializer
+    # Public access (no permission_classes)

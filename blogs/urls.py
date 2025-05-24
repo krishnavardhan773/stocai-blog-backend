@@ -52,3 +52,9 @@ from .views import PublicBlogUpdateDeleteView
 urlpatterns += [
     path('public/blogs/<int:pk>/', PublicBlogUpdateDeleteView.as_view(), name='public-blog-update-delete'),
 ]
+
+from .views import StorySubmissionListPublicView
+
+urlpatterns += [
+    path('admin/stories/', StorySubmissionListPublicView.as_view(), name='public-stories'),
+]
