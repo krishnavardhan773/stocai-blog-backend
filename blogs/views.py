@@ -81,3 +81,12 @@ class FeedbackListAdminView(generics.ListAPIView):
     serializer_class = FeedbackSerializer
     # No permission_classes → open to all
     # 🔓 No permission_classes → open to public
+
+from rest_framework import generics
+from .models import BlogPost
+from .serializers import BlogPostSerializer
+
+class PublicBlogCreateView(generics.CreateAPIView):
+    queryset = BlogPost.objects.all()
+    serializer_class = BlogPostSerializer
+    # No authentication required

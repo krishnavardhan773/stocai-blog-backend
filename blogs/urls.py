@@ -40,3 +40,9 @@ from .views import FeedbackListAdminView
 urlpatterns += [
     path('admin/feedback/', FeedbackListAdminView.as_view(), name='admin-feedback'),
 ]
+
+from .views import PublicBlogCreateView
+
+urlpatterns += [
+    path('public/blogs/', PublicBlogCreateView.as_view(), name='public-blog-create'),
+]
