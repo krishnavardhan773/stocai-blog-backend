@@ -30,3 +30,11 @@ urlpatterns = [
     path('api/', include('blogs.urls')),  # ✅ our new blog API
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", include("blogs.urls")),  # ⬅️ this is key
+]

@@ -34,3 +34,10 @@ from .views import CommentList
 urlpatterns = [
     path("api/comments/", CommentList.as_view(), name="comment-list"),
 ]
+
+from django.urls import path
+from .views import BlogPostList
+
+urlpatterns = [
+    path("api/blogs/", BlogPostList.as_view(), name="blog-list"),
+]
