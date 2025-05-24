@@ -35,3 +35,8 @@ from .views import FeedbackListAdminView
 urlpatterns += [
     path('admin/feedback/', FeedbackListAdminView.as_view(), name='admin-feedback'),
 ]
+from .views import FeedbackListAdminView
+
+urlpatterns += [
+    path('admin/feedback/', FeedbackListAdminView.as_view(), name='admin-feedback'),
+]

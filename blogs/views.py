@@ -79,4 +79,5 @@ from .serializers import FeedbackSerializer
 class FeedbackListAdminView(generics.ListAPIView):
     queryset = Feedback.objects.all().order_by('-submitted_at')
     serializer_class = FeedbackSerializer
+    # No permission_classes → open to all
     # 🔓 No permission_classes → open to public
