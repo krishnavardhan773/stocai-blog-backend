@@ -29,3 +29,9 @@ urlpatterns = [
     # Optional: separate list view for comments if used
     path('comment-list/', CommentList.as_view(), name='comment-list'),
 ]
+
+from .views import FeedbackListAdminView
+
+urlpatterns += [
+    path('admin/feedback/', FeedbackListAdminView.as_view(), name='admin-feedback'),
+]
